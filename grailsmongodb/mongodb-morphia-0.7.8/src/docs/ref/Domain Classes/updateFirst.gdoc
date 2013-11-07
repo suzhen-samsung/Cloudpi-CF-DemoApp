@@ -1,0 +1,39 @@
+h1. updateFirst
+
+h2. Purpose
+
+Static method that updates fields of an instance. Only the first instance that matches the query will be updated
+
+Be aware that after calling update the domain class instance is not refreshed automatically. You need to fetch the entity from db again to get the new state.
+
+h2. Examples
+
+{code}
+// increase field value of actualHours by 5
+Task.updateFirst([incomplete: true], {
+  inc 'actualHours', 5
+})
+{code}
+
+h2. Description
+
+{code:java}
+book.updateFirst( id, Closure updateOperations, boolean createIfAbsent = false, WriteConcern wc = null )
+book.updateFirst( Map query, Closure updateOperations, boolean createIfAbsent = false, WriteConcern wc = null )
+{code}
+
+
+Parameters:
+
+* @id@ - id of the entity
+* @query@ - query as used in findAll method
+* @updateOperations@ - This closure is executed within the context of morphias "UpdateOperations":http://code.google.com/p/morphia/source/browse/trunk/morphia/src/main/java/com/google/code/morphia/query/UpdateOperations.java
+* @createIfAbsent@ - If set to true, flieds that are not present in entity will be created
+* @wc@ - A WriteConcern object which configures the write strategy for the update operation
+
+h2. See also
+
+* "Morphia - How to update data":http://code.google.com/p/morphia/wiki/Updating
+* "WriteConcern api docs":http://api.mongodb.org/java/current/com/mongodb/WriteConcern.html
+
+.

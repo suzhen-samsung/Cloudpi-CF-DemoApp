@@ -1,0 +1,29 @@
+h1. count
+
+h2. Purpose
+
+Returns the number of documents stored in the database. Optionally a query can be passed to count by query.
+
+h2. Examples
+
+{code:java}
+// count all documents of that type
+println Book.count()
+// count by query
+println Book.count([author:'Dan Brown'])
+{code}
+
+h2. Description
+
+The basic syntax for the method is:
+
+{code:java}
+Book.count()
+Book.count( Map query )
+{code}
+
+Parameters:
+
+* @query@ - A "filter for querying":http://jkuehn.github.com/gorm-mongodb/guide/4.%20Querying.html
+
+

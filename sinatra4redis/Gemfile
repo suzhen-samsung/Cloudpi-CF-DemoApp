@@ -1,0 +1,9 @@
+source 'http://rubygems.org'
+
+gem 'sinatra'
+#gem 'thin'
+
+gem 'redis', '2.2.2'
+gem 'json'
+
+gem 'cpruntime', '1.03'

@@ -1,0 +1,12 @@
+
+require:
+    - play
+    - customModules -> playrabbitmqmodule
+    
+repositories:
+    - playCustomModules:
+           type:  local
+           artifact: "D:/work/play-1.2.2/samples-and-tests/playrabbitmqmodule/dist/playrabbitmqmodule-0.1.zip"
+           contains:
+                    - customModules ->  *
+                    

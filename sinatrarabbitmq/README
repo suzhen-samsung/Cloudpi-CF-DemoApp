@@ -1,0 +1,7 @@
+Deploy steps:
+1.svn checkout 
+2.create project by web console or pi cammand line
+3.create app
+4.launch rabbitmq service at scalar if you have no rabbitmq service 
+5.bind service to the new app
+6.open the URL

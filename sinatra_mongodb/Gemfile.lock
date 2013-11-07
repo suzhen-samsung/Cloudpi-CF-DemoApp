@@ -1,0 +1,39 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    #bunny (0.8.0)
+    #memcache-client (1.8.5)
+    bson (1.3.0)
+    bson_ext (1.3.0)
+    mongo (1.3.0)
+      bson (>= 1.3.0)
+    cpruntime (1.03)
+    daemons (1.1.8)
+    eventmachine (0.12.10)
+    json (1.7.3)
+    rack (1.4.1)
+    rack-protection (1.2.0)
+      rack
+    sinatra (1.3.2)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    tilt (1.3.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  #bunny
+  #memcache-client (= 1.8.5)
+  bson (= 1.3.0)
+  bson_ext (= 1.3.0)
+  mongo (= 1.3.0)
+  cpruntime
+  json
+  sinatra
+  thin

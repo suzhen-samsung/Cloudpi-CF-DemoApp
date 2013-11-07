@@ -1,0 +1,4 @@
+self: play -> playsqlmodule 0.1
+
+require:
+    - play

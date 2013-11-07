@@ -1,0 +1,4 @@
+#External Dependencies
+#Tue Sep 04 08:22:21 EDT 2012
+/home/pyli/simply_lift/samples/forms/project/boot/scala-2.7.7/lib/scala-library.jar=LiftProject.scala
+/home/pyli/simply_lift/samples/forms/project/boot/scala-2.7.7/org.scala-tools.sbt/sbt/0.7.5/sbt_2.7.7-0.7.5.jar=LiftProject.scala

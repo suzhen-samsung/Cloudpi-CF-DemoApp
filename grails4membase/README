@@ -1,0 +1,17 @@
+to package a war file
+
+$wget http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.1.0.zip
+
+$unzip  grails-2.1.0.zip
+
+$cd grails-2.1.0
+
+$export PATH=$PATH:/path/to/your/grails/bin
+
+$cd project_root
+
+$grails war
+
+
+
+WAR file is in target/grails4membase-0.1.war

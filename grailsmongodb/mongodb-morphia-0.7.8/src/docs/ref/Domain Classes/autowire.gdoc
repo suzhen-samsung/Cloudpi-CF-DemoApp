@@ -1,0 +1,21 @@
+h1. autowire
+
+h2. Purpose
+
+Autowires domain class properties using Spring's dependency injection. All domain objects returned by the plugin (find, list, get, etc) are autowired automatically.
+
+h2. Examples
+
+{code:java}
+@MongoEntity
+class Book {
+  transient mailService
+
+  def afterSave = {
+    if (!mailService) autowire()
+
+    // mailservice is now injected
+  }
+
+}
+{code}

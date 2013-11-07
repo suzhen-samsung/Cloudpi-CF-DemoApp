@@ -1,0 +1,76 @@
+Here you will find a step by step guide to set up a test project that uses the mongodb-morphia plugin to manipulate domain classes in Grails
+
+h2. Creating a test project that uses mongodb-morphia
+
+We are going to create a new Grails application that has only one domain class: Car. Using the generate-all command we will generate the controllers and views necessary to manipulate instances of that domain.
+
+Let's start off, create a new Grails project and install the mongodb-morphia plugin:
+
+{code}
+> grails create-app MongoGrailsQuickstart
+> cd MongoGrailsQuickstart
+> grails install-plugin mongodb-morphia
+{code}
+
+The mongodb-morphia plugin provides a create-mongodb-class command that creates a stub for the domain class, as well as corresponding test cases. Let's call it:
+
+{code}
+> grails create-mongodb-class Car
+{code}
+
+MongoDB domain classes are put into the grails-app/mongo directory. Now we need to edit some files: Config.groovy for the database connection and our new Car domain, where we want to put some fields:
+
+*grails-app/conf/DataSource.groovy*
+
+{code}
+mongodb {
+  host = '192.168.1.36' // adjust this according to your settings
+  port = 27017
+  databaseName = 'test'
+  username = 'user'  // database user and password, if server requires authentication
+  password = 's3cret' 
+}
+{code}
+
+You can configure "replica sets":http://www.mongodb.org/display/DOCS/Replica+Sets this way:
+
+{code}
+mongodb {
+  replicaSet = [ "localhost:27017", "localhost:27018"]
+  databaseName = 'test'
+}
+{code}
+
+
+Now the fields and constraints
+
+*grails-app/mongo/mongograilsquickstart/Car.groovy*
+
+{code}
+package mongograilsquickstart
+
+class Car {
+    String name
+    String brand
+
+    int ps // horsepower
+    Date buildDate
+
+    Date dateCreated // autoset by plugin
+    Date lastUpdated // autoset by plugin
+
+    static constraints = {
+        brand nullable:true
+        ps min: 30, max: 1001
+    }
+}
+{code}
+
+Now generate the controllers and views and fire up the app!
+
+{code}
+> grails generate-all mongograilsquickstart.Car
+> grails run-app
+{code}
+
+Now point your browser to http://localhost:8080/MongoGrailsQuickstart *Done!*

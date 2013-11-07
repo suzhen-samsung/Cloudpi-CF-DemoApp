@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Redis Sinatra Sample</title>
+  </head>
+  <body>
+    <h1>Redis Sinatra Sample</h1>
+    <h2>Insert into table</h2>
+    <form action="/set" method="POST">
+      <label for="message">"Key:Value to store:"</label>
+      <input name="message" type="text" />
+      <% if @hosts %>
+			<select name="host">
+				<% @hosts.each_index do |i| %>
+				<option value ="<%= @hosts[i].hostname%>"><%= @hosts[i].hostname%></option>
+				<%end%>
+			</select>
+	  <% end %>
+      <input type="submit" value="Store"/>
+    </form>   
+
+    <% if @store %>
+      <p>store a message!</p>
+    <% end %>
+
+    <h2>Get the value</h2>
+
+    <form action="/get" method="POST">
+      <label for="message">"Key to get:"</label>
+      <input name="message" type="text" />
+      <% if @hosts %>
+			<select name="host">
+				<% @hosts.each_index do |i| %>
+				<option value ="<%= @hosts[i].hostname%>"><%= @hosts[i].hostname%></option>
+				<%end%>
+			</select>
+	  <% end %>
+      <input type="submit" value="Get"/>
+    </form>
+
+    <% if @got %>
+      <p>Got message: <%= @got %></p>
+    <% end %> 
+  </body>
+</html>
+

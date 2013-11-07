@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>MongoDB Sinatra Sample</title>
+  </head>
+  <body>
+    <h1>MongoDB Sinatra Sample</h1>
+
+    <h2>Publish a message</h2>
+    <form action="/publish" method="POST">
+      <% if @hosts %>
+         <select name="host1">   
+           <% @hosts.each_index do |i| %>
+             <option value ="<%=@hosts[i].hostname%>"><%=@hosts[i].hostname%></option> 
+           <%end%>
+         </select>
+      <% end %>
+      <label for="key1">Key to publish:</label>
+      <input name="key1" type="text" />
+
+      <label for="message">Message to publish:</label>
+      <input name="message" type="text" />
+      <input type="submit" value="Publish"/>
+    </form>
+
+    <% if @published %>
+      <p>Published a message!</p>
+    <% end %>
+
+    <h2>Get a message</h2>
+
+    <form action="/get" method="POST">
+      <% if @hosts %>
+         <select name="host2">
+           <% @hosts.each_index do |i| %>
+             <option value ="<%=@hosts[i].hostname%>"><%=@hosts[i].hostname%></option>
+           <%end%>
+         </select>
+      <% end %>
+      <label for="key2">Key to get:</label>
+      <input name="key2" type="text" />
+      <input type="submit" value="Get one"/>
+    </form>
+
+    <% if @got %>
+      <p>
+        <% case @got
+           when :queue_empty %>
+          Queue empty
+        <% else %>
+        Got message: <%= @got %>
+        <% end %> 
+      </p>
+    <% end %>
+  </body>
+</html>

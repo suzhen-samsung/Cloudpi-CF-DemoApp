@@ -1,0 +1,4 @@
+use play 1.2.2
+
+play_mongo5.war : deployment war
+play_mongodb : play project

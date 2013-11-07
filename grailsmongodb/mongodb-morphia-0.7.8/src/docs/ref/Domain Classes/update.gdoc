@@ -1,0 +1,57 @@
+h1. update
+
+h2. Purpose
+
+Updates fields of instances
+
+Be aware that after calling update the domain class instance is not refreshed automatically. You need to fetch the entity from db again to get the new state.
+
+h2. Examples
+
+{code:java}
+// increase field value of actualHours by 5
+task.update {
+  inc 'actualHours', 5
+}
+
+// increase field value of actualHours by 5, create entity if not in db
+Task.update(params.id, {
+  inc 'actualHours', 5
+}, true)
+
+// update set
+document.update {
+  add 'tags', 'mongodb' // add string 'mongodb' to the 'tags' set
+}
+{code}
+
+h2. Description
+
+On instances:
+
+{code:java}
+book.update( Closure updateOperations, boolean createIfAbsent = false, WriteConcern wc = null )
+{code}
+
+The static method updates all matched instances:
+
+{code:java}
+book.update( id, Closure updateOperations, boolean createIfAbsent = false, WriteConcern wc = null )
+book.update( Map query, Closure updateOperations, boolean createIfAbsent = false, WriteConcern wc = null )
+{code}
+
+
+Parameters:
+
+* @id@ - id of the entity
+* @query@ - query as used in findAll method
+* @updateOperations@ - This closure is executed within the context of morphias "UpdateOperations":http://code.google.com/p/morphia/source/browse/trunk/morphia/src/main/java/com/google/code/morphia/query/UpdateOperations.java
+* @createIfAbsent@ - If set to true, flieds that are not present in entity will be created
+* @wc@ - A WriteConcern object which configures the write strategy for the update operation
+
+h2. See also
+
+* "Morphia - How to update data":http://code.google.com/p/morphia/wiki/Updating
+* "WriteConcern api docs":http://api.mongodb.org/java/current/com/mongodb/WriteConcern.html
+
+.

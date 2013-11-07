@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Redis Testing</title>
+</head>
+<body>
+	<h2>Welcome to Redis Testing</h2>
+	
+	<p>set testing:
+	<form action="@{Redis.set()}" method="GET">
+		<p>Select Hosts:
+		<p><select class="" id="hostName" name="hostName" >
+			#{list items:redisHostList, as:'h'}
+				<option value="${h}">${h}</option>
+			#{/list}
+		</select>
+		
+		<p>Input Key:<input type="text" name="key" /> 
+		<P>Input Value:<input type="text" name="value" /> 
+		<input type="submit" value="Set Value" />
+	</form>
+	
+	<p><br><br><br>get testing:
+	<form action="@{Redis.get()}" method="GET">
+		<p>Select Hosts:
+		<p><select class="" id="hostName" name="hostName" >
+			#{list items:redisHostList, as:'h'}
+				<option value="${h}">${h}</option>
+			#{/list}
+		</select>
+		
+		<p>Input Key:<input type="text" name="key" /> 
+		<input type="submit" value="Get Value" />
+	</form>
+</body>
+</html>

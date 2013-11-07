@@ -1,0 +1,7 @@
+forms : the lift runnable app, including sbt environment and all source code
+
+
+lift-sbt-template_2.8.1-0.1.war : the war package for deployment
+
+
+./forms/target/scala_2.8.1/lift-sbt-template_2.8.1-0.1.war
