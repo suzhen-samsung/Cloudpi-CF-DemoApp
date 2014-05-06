@@ -1,0 +1,33 @@
+<html> <head>
+<title>CouchDB in Django: {{ row.key }}</title>
+</head>
+<body>
+<h1>CouchDB in Django: {{ row.key }}</h1>
+<a href="/">Return to index</a>
+
+<table>
+  <tr>
+    <td> key </td>
+    <td id="key">{{ row.key }}</td>
+  </tr>
+  <tr>
+    <td> value </td>
+    <td id="value">{{ row.value }}</td>
+  </tr>
+</table>
+<hr>
+<form method="post" action=".">
+<table>
+  <tr>
+    <td> new document </td>
+    <td><input type="text" name="key" value="{{ row.key }}"></td>
+  </tr>
+  <tr>
+    <td> value </td>
+    <td><textarea name="value">{{ row.value }}</textarea></td>
+  <tr>
+    <td><input type="submit"></td>
+  </tr>
+</table>
+</form>
+</body> </html>

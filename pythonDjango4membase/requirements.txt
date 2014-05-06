@@ -1,0 +1,4 @@
+Django==1.6.2
+argparse==1.2.1
+python-memcached==1.53
+wsgiref==0.1.2

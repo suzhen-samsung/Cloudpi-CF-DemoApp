@@ -1,0 +1,21 @@
+import memcache
+import os.path
+import subprocess
+import sys
+import time
+
+NODES = ['ec2-54-193-228-24.us-west-1.compute.amazonaws.com:11211'] 
+def main():
+    print 'connecting to memcached...'
+
+    try:
+        mc = memcache.Client(NODES)
+        all_stats = mc.set("testkey","testvalue")
+        value = mc.get("testkey")
+        print value
+    except Exception:
+        print time.strftime('%Y/%m/%d %H:%M:%S', time.localtime()), 'error'
+        sys.exit(1)
+
+if __name__ == '__main__':
+    main()
