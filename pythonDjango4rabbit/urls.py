@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'celery_test.views.home', name='home'),
     # uurl(r'^celery_test/', include('celery_test.foo.urls')),
-	url(r'^celery_test/', 'test.views.test_celery'),
+	url(r'^$', 'test.views.test_celery'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
