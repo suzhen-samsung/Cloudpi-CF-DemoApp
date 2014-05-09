@@ -1,4 +1,3 @@
-#django-redis-engine>=0.1.0
 Brlapi==0.5.6
 Cheetah==2.4.4
 CloudStack>=0.1
@@ -12,7 +11,6 @@ M2Crypto==0.21.1
 Mako==0.5.0
 Markdown==2.4
 MarkupSafe>=0.15
-#MarkupSafe==0.19
 MySQL-python==1.2.5
 PAM==0.4.2
 PIL==1.1.7
@@ -55,7 +53,6 @@ euca2ools>=2.0.0
 gevent-socketio==0.2.1
 gevent-websocket==0.2.3
 gevent>=1.0
-#git+https://github.com/MirkoRossini/django-redis-engine.git
 greenlet==0.4.2
 gunicorn==18.0
 httplib2==0.7.2
@@ -94,11 +91,8 @@ pylint==0.25.0
 pymongo==2.6.3
 pyserial==2.5
 pysmbc==1.0.13
-#pysnmp-apps>=0.2.6a
-#pysnmp==4.1.12a
 pysnmp>=4.1.12a
 pysqlite==2.6.3
-#python-apt==0.8.3ubuntu7.1
 python-apt>=0.8.3ubuntu7
 python-dateutil==1.5
 python-debian==0.1.21ubuntu1
@@ -110,7 +104,6 @@ reportlab==2.5
 requests==1.2.0
 rhythmbox-ubuntuone==4.2.0
 scalarizr>=2.4.5
-#scalr-upd-client==0.4.13
 scalr-upd-client>=0.4.10
 screen-resolution-extra>=0.0.0
 sessioninstaller==0.0.0
@@ -128,7 +121,6 @@ ufw==0.31.1-1
 unattended-upgrades==0.1
 unity-lens-video==0.3.5
 unity-scope-video-remote==0.3.5
-#usb-creator==0.2.23
 uuid==1.30
 virtualenv==1.11.4
 wadllib==1.3.0
@@ -137,4 +129,3 @@ wsgiref==0.1.2
 xdiagnose==2.5.3
 xkit==0.0.0
 zope.interface>=3.6.1
-#zope.interface==4.0.5
