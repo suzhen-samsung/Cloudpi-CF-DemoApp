@@ -1,0 +1,10 @@
+{
+  "config": [
+    {
+      "file": "mysite/settings.py",
+      "match": "        \'PASSWORD\': \'Djt1LZvyK48ss9HFDm\',",
+      "template": "            \"PASSWORD\":\"%{decryped_string}\"",
+      "encrypted_string": "U2FsdGVkX19YHisI4dRB5l4Eag8X/C1mOcSlIuk+n2kZ9uouq9uT6Q=="
+    }
+  ]
+}

@@ -63,7 +63,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'cloudpidb',                     
         'USER': 'scalr',
-        'PASSWORD': 'uZDjt1LZvyK48ss9HFDm',
+        'PASSWORD': 'Djt1LZvyK48ss9HFDm',
         'HOST': 'ec2-54-82-100-64.compute-1.amazonaws.com',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
